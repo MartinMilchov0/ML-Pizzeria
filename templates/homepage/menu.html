@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/homepage/menu.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/download.png') }}">
+  <title>Menu</title>
+</head>
+
+<body>
+
+  <!-- <div class="poster">
+        <img src="/static/images/poster.jpg">
+    </div>
+     -->
+
+
+  <div class="navbar">
+    <div class="dropdown">
+      <button class="dropbtn">Account</button>
+      <div class="dropdown-content">
+        <a href="{{ url_for('main.profile') }}">Profile</a>
+        <a href="{{ url_for('auth.login') }}">Log In</a>
+        <a href="{{ url_for('auth.signup') }}">Sign Up</a>
+        <a href="{{ url_for('auth.logout') }}">Log out</a>
+      </div>
+    </div>
+    <a style="float:left" href="/">Home</a>
+    <a href="/menu">Menu</a>
+    <a href="/aboutus">About Us</a>
+  </div>
+
+  <a href="/order">
+    <button class="basket">Basket</button>
+  </a>
+
+  <div class="container">
+    <div id="buttons">
+      <button class="btn active" onclick="filterSelection('all')"> Menu</button>
+      <button class="btn" onclick="filterSelection('pizza')"> Pizza</button>
+      <button class="btn" onclick="filterSelection('drinks')"> Drinks</button>
+      <button class="btn" onclick="filterSelection('desert')"> Deserts</button>
+    </div>
+
+
+    <div class="row">
+      <div class="column pizza">
+        <div class="content">
+          <img src="/static/images/menu/pizza/margarita.jpg" alt="Margarita" style="width:100%">
+          <h4>Margherita 9$</h4>
+          <p>Cheese, Tomato sauce and Basil</p>
+          <form method="POST" action="/order">
+            <button class="button" value="Margarita" name="pizza">Add</button>
+            <input type="hidden" name="price" value="9">
+          </form>
+        </div>
+      </div>
+      <div class="column pizza">
+        <div class="content">
+          <img src="/static/images/menu/pizza/proshuto.jpg" alt="Prosciutto" style="width:100%">
+          <h4>Prosciutto 12$</h4>
+          <p>Tomato sauce, Mozzarella, Prosciutto</p>
+          <form method="POST" action="/order">
+            <button class="button" value="Prosciutto" name="pizza">Add</button>
+            <input type="hidden" name="price" value="12">
+          </form>
+        </div>
+      </div>
+      <div class="column pizza">
+        <div class="content">
+          <img src="/static/images/menu/pizza/peperoni800x600.jpg" alt="Peperoni" style="width:100%">
+          <h4>Pepperoni 11.50$</h4>
+          <p>Tomato sauce, Mozzarella, Pepperoni</p>
+          <form method="POST" action="/order">
+            <button class="button" value="Peperoni" name="pizza">Add</button>
+            <input type="hidden" name="price" value="11.50">
+          </form>
+        </div>
+      </div>
+
+      <div class="column pizza">
+        <div class="content">
+          <img src="/static/images/menu/pizza/formagi.jpg" alt="Formaggi" style="width:100%">
+          <h4>Quatro Formaggi 14.30$</h4>
+          <p>Cream, 4 Cheeses</p>
+          <form method="POST" action="/order">
+            <button class="button" value="Formaggi" name="pizza">Add</button>
+            <input type="hidden" name="price" value="14.30">
+          </form>
+        </div>
+      </div>
+      <div class="column pizza">
+        <div class="content">
+            <img src="/static/images/menu/pizza/homemade.jpg" alt="Home Recipe" style="width:100%">
+            <h4>Home Recipe 16$</h4>
+            <p>Tomato sauce, Mozzarella, Prosciutto, Peppers, Onion, Mushrooms</p>
+            <form method="POST" action="/order">
+              <button class="button" value="Home Recipe" name="pizza">Add</button>
+              <input type="hidden" name="price" value="16">
+            </form>
+        </div>
+      </div>
+      <div class="column pizza">
+        <div class="content">
+            <img src="/static/images/menu/pizza//dutchpizza.jpeg" alt="Dutch Pizza" style="width:100%">
+            <h4>Dutch Pizza 14$</h4>
+            <p>Tomato sauce, Mozzarella, Avocado, Olives, Salami</p>
+            <form method="POST" action="/order">
+                <button class="button" value="Dutch Pizza" name="pizza">Add</button>
+                <input type="hidden" name="price" value="14">
+            </form>
+        </div>
+      </div>
+      <div class="column pizza">
+        <div class="content">
+            <img src="/static/images/menu/pizza/pizza_verona.jpg" alt="Pizza Verona" style="width:100%">
+            <h4>Pizza Verona 12.89$</h4>
+            <p>Cheese,Tomato sauce and Basil, Chicken, Mushrooms, Yellow Peppers</p>
+            <form method="POST" action="/order"><button class="button" value="Pizza Verona" name="pizza">Add</button>
+            <input type="hidden" name="price" value="12.89">
+          </form>
+        </div>
+      </div>
+      <div class="column pizza">
+        <div class="content">
+          <img src="/static/images/menu/pizza/continental.jpg" alt="Continental Pizza" style="width:100%">
+          <h4>Continental Pizza 17.39$</h4>
+          <p>Mozzarella, Chicken, Mushrooms, Onion, Pork</p>
+          <form method="POST" action="/order"><button class="button" value="Continental Pizza" name="pizza">Add</button>
+            <input type="hidden" name="price" value="17.39">
+          </form>
+        </div>
+      </div>
+      <div class="column pizza">
+        <div class="content">
+          <img src="/static/images/menu/pizza/redpizza.jpg" alt="The Red Devil" style="width:100%">
+          <h4>The Red Devil 16$</h4>
+          <p>Try at Your Own Risk!<br> Tomato sause, Chilli peppers, Red Peppers, Chilli Sause, Chicken</p>
+          <form method="POST" action="/order"><button class="button" value="The Red Devil" name="pizza">Add</button>
+            <input type="hidden" name="price" value="16">
+          </form>
+        </div>
+      </div>
+
+      <div class="column drinks">
+        <div class="content">
+          <img src="/static/images/menu/drinks/lemonade.jpg" alt="drinks" style="width:100%">
+          <h4>Lemonade 5$</h4>
+          <p>Feel the joy of drinking freshly squeezed lemonade!</p>
+          <form method="POST" action="/order"><button class="button" value="Lemonade" name="pizza">Add</button>
+            <input type="hidden" name="price" value="5">
+          </form>
+        </div>
+      </div>
+      <div class="column drinks">
+        <div class="content">
+          <img src="/static/images/menu/drinks/margarita.jpg" alt="drinks" style="width:100%">
+          <h4>Margarita 9$</h4>
+          <p>Refresh yourself with our newly added homemade margarita</p>
+          <form method="POST" action="/order"><button class="button" value="Margarita" name="pizza">Add</button>
+            <input type="hidden" name="price" value="9">
+          </form>
+        </div>
+      </div>
+      <div class="column drinks">
+        <div class="content">
+          <img src="/static/images/menu/drinks/sexonthebeach1.jpg" alt="drinks" style="width:100%">
+          <h4>Sex on The Beach 9$</h4>
+          <p>Vodka perfectly mixed with peach juice</p>
+          <form method="POST" action="/order"><button class="button" value="Sex on The Beach" name="pizza">Add</button>
+            <input type="hidden" name="price" value="9">
+          </form>
+        </div>
+      </div>
+      <div class="column drinks">
+        <div class="content">
+          <img src="/static/images/menu/drinks/bavariabeer.png" alt="drinks" style="width:100%">
+          <h4>Bavaria Beer 5$</h4>
+          <p>The best beer around here</p>
+          <form method="POST" action="/order"><button class="button" value="Bavaria Beer" name="pizza">Add</button>
+            <input type="hidden" name="price" value="5">
+          </form>
+        </div>
+      </div>
+      <div class="column drinks">
+        <div class="content">
+          <img src="/static/images/menu/drinks/eastsitedarkbeer.png" alt="drinks" style="width:100%">
+          <h4>Eastside Dark Beer 6$</h4>
+          <p>Bavarian dark lager is a blend of three specialty grains, creating a rich, smooth, dark beer that anyone can enjoy.</p>
+          <form method="POST" action="/order"><button class="button" value="Eastside Dar Beer" name="pizza">Add</button>
+            <input type="hidden" name="price" value="6">
+          </form>
+        </div>
+      </div>
+
+      <div class="column drinks">
+        <div class="content">
+          <img src="/static/images/menu/drinks/heinekenbeer.jpg" alt="drinks" style="width:100%">
+          <h4>Heineken Beer 5$</h4>
+          <p>Heineken gives you the best flavour on the market</p>
+          <form method="POST" action="/order"><button class="button" value="Heineken Beer" name="pizza">Add</button>
+            <input type="hidden" name="price" value="5">
+          </form>
+        </div>
+      </div>
+      <div class="column drinks">
+        <div class="content">
+          <img src="/static/images/menu/drinks/royalbeer.png" alt="drinks" style="width:100%">
+          <h4>Royal Beer 6$</h4>
+          <p>The largest brand of Unibrew is Royal. The beer is distinctly recognizable because of its unique flavour</p>
+          <form method="POST" action="/order"><button class="button" value="Royal Beer" name="pizza">Add</button>
+            <input type="hidden" name="price" value="6">    
+          </form>      
+        </div>
+      </div>
+      <div class="column drinks">
+        <div class="content">
+          <img src="/static/images/menu/drinks/beerset.jpg" alt="drinks" style="width:100%">
+          <h4>Beer Set 15$</h4>
+          <p>Set of 4 of the most ordered beers for the month</p>
+          <form method="POST" action="/order"><button class="button" value="Beer Set" name="pizza">Add</button>
+            <input type="hidden" name="price" value="15">
+          </form>
+        </div>
+      </div>
+      <div class="column drinks">
+        <div class="content">
+          <img src="/static/images/menu/drinks/guinessbeer.jpg" alt="drinks" style="width:100%">
+          <h4>Guiness Beer 6$</h4>
+          <p>The famous Irish Beer </p>
+          <form method="POST" action="/order"><button class="button" value="Guiness Beer" name="pizza">Add</button>
+            <input type="hidden" name="price" value="6">
+          </form>
+        </div>
+      </div>
+
+      <div class="column desert">
+        <div class="content">
+          <img src="/static/images/menu/desert/tiramisu.jpg" alt="desert" style="width:100%">
+          <h4>Tiramisu 8$</h4>
+          <p>Try our homemade Tiramisu for an explosion of flavours in your mouth</p>
+          <form method="POST" action="/order"><button class="button" value="Tiramisu" name="pizza">Add</button>
+            <input type="hidden" name="price" value="8">
+          </form>
+        </div>
+      </div>
+      <div class="column desert">
+        <div class="content">
+          <img src="/static/images/menu/desert/brulee.jpg" alt="desert" style="width:100%">
+          <h4>Brulee 8$</h4>
+          <p>The special desert for the month. Worth trying it...</p>
+          <form method="POST" action="/order"><button class="button" value="Brulee" name="pizza">Add</button>
+            <input type="hidden" name="price" value="8">
+          </form>
+        </div>
+      </div>
+      <div class="column desert">
+        <div class="content">
+          <img src="/static/images/menu/desert/icemelba.jpg" alt="desert" style="width:100%">
+          <h4>Ice Cream Melba 8$</h4>
+          <p>A selected mixture of icecream flavours</p>
+          <form method="POST" action="/order"><button class="button" value="Ice Cream Melba" name="pizza">Add</button>
+            <input type="hidden" name="price" value="8">
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- END GRID -->
+  </div>
+
+  <!-- END MAIN -->
+  </div>
+  <script>
+    filterSelection("all")
+    function filterSelection(c) {
+      var x, i;
+      x = document.getElementsByClassName("column");
+      if (c == "all") c = "";
+      for (i = 0; i < x.length; i++) {
+        w3RemoveClass(x[i], "show");
+        if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+      }
+    }
+
+    function w3AddClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+      }
+    }
+
+    function w3RemoveClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+          arr1.splice(arr1.indexOf(arr2[i]), 1);
+        }
+      }
+      element.className = arr1.join(" ");
+    }
+
+
+    // Add active class to the current button (highlight it)
+    var btnContainer = document.getElementById("myBtnContainer");
+    var btns = btnContainer.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function () {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      });
+    }
+  </script>
+</body>
+
+</html>

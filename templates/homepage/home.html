@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/homepage/home.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/download.png') }}">
+
+  <title>ML Pizzeria</title>
+</head>
+
+<body>
+
+  <div class="navbar">
+    <div class="dropdown">
+      <button class="dropbtn">Account</button>
+      <div class="dropdown-content">
+        <a href="{{ url_for('main.profile') }}">Profile</a>
+        <a href="{{ url_for('auth.login') }}">Log In</a>
+        <a href="{{ url_for('auth.signup') }}">Sign In</a>
+        <a href="{{ url_for('auth.logout') }}">Log out</a>
+      </div>
+    </div>
+    <a style="float:left" href="#home">Home</a>
+    <a href="#promo">Promo</a>
+    <a href="/menu">Menu</a>
+    <a href="/aboutus">About Us</a>
+  </div>
+
+  <div id="home">
+    <div id="title">
+      <p>Mario & Luigi's Pizzeria</p>
+    </div>
+    <a href="/order">
+      <button class="basket">Basket</button>
+    </a>
+  </div>
+
+  <div id="space">
+    <div class="topper">
+      <div class="pizza-container">
+        <h1 class="pizza-text">100% Italian Pizza</h1>
+        <h3 class="h3-text">Craving a delicious, authentic Italian pizza?</h3>
+      </div>
+      <a href='/menu ' class="button">Add</a>
+      <img class="midimage" src="/static/images/margarita.png">
+    </div>
+  </div>
+
+  <div id="promo">
+    <div class="promo-container">
+      <div class="text-promo">
+        <div class="text-container">
+          <h1>ONE DAY OFFER</h1>
+          <h2>PROMO OFFER</h2>
+          <strong>Pizza Margarita<br></strong>
+          <strong>Pizza PEPERONI<br></strong>
+          <strong>Coke 200ml.</strong>
+        </div>
+      </div>
+      <img class="promoimage" src="/static/images/menu/pizza/peperoni800x600.jpg">
+    </div>
+
+
+  </div>
+
+</body>
+
+</html>

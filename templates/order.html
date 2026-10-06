@@ -1,0 +1,46 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/order.css') }}">
+    <!-- <link rel="stylesheet" href="{{ url_for('static',filename='css/homepage/home.css') }}"> -->
+    <title>Your Order</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="dropdown">
+            <button class="dropbtn" >Account</button>
+            <div class="dropdown-content">  
+                <a href="{{ url_for('main.profile') }}">Profile</a>
+                <a href="{{ url_for('auth.login') }}">Log In</a>
+                <a href="{{ url_for('auth.signup') }}">Sign In</a>
+                <a href="{{ url_for('auth.logout') }}" >Log out</a>
+            </div>
+        </div> 
+        <a style="float:left" href="/">Home</a>
+        <a href="#promo">Promo</a>
+        <a href="/menu">Menu</a>
+        <a href="/aboutus">About Us</a>
+    </div>
+
+ 
+    <div class="container">
+        <div class="text-heading">    
+            {% if orderList == [] %}
+                <h1>No items selected</h1>
+            {% else %}
+                <h1>Your Order</h1>
+            {% endif %}
+        </div>  
+        <div class="order-text">  
+            <p>
+                {% for order in orderList %}
+                <h3 class="items"> {{order[0]}}:  {{order[1]}}$ </h3>
+                {% endfor %}
+                <h2>Total: {{Total}}$</h2> 
+            <a href="/remove_last" class="button3">Remove last item</a>           
+            <a href="/finish_order" class="button2">Pay at the restaurant</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

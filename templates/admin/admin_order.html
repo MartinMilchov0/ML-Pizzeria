@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/order_admin.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="content">
+    <h1>ORDERS</h1>
+    <form action="/order_ready" method = 'post'>
+        <label for="order">Type order number that is finished:</label><br>
+        <input type="text" name="order"><br>
+        <input type = "submit" value = "submit">
+    </form>
+    </div>
+    <h2>
+        {%for item in current_orders%}
+            <tr>
+                <div class = 'content'>
+                    {{item}}
+                </div>
+                
+                <br>
+            </tr>
+            {% endfor %}   
+    </h2>
+
+</body>
+</html>

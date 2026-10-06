@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/homepage/about.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/download.png') }}">
+    <title>About Us</title>
+</head>
+<body>
+
+  <div class="navbar">
+      <div class="dropdown">
+          <button class="dropbtn" >Account</button>
+          <div class="dropdown-content">  
+              <a href="{{ url_for('main.profile') }}">Profile</a>
+              <a href="{{ url_for('auth.login') }}">Log In</a>
+              <a href="{{ url_for('auth.signup') }}">Sign In</a>
+              <a href="{{ url_for('auth.logout') }}" >Log out</a>
+          </div>
+      </div> 
+      <a style="float:left" href="/">Home</a>
+      <a href="/menu">Menu</a>
+      <a href="/aboutus">About Us</a>
+  </div>
+
+
+
+    <div class="about-section">
+      <div class="text-container">
+        <h1>About Us</h1>
+        <p>We are the coding team that created "Mario & Luigi's Pizzeria" Website</p>
+      </div>
+    </div>
+      
+      <p id="ourteam" style="text-align:center">Our Team</p>
+      <div class="row">
+        <div class="column">
+          <div class="card">
+            <img src="/static/images/people/Michael.jpeg" alt="Jane" style="width:100%">
+            <div class="container">
+              <h2>Michael Tworek</h2>
+              <p class="title">Team Leader</p>
+              <p>Organization, backend development and sometimes team motivation.</p>
+              <p>michaeltworekk@gmail.com</p>
+              <p><button class="button">Contact</button></p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="card">
+            <img src="/static/images/people/stas.jpg" alt="Mike" style="width:100%">
+            <div class="container">
+              <h2>Stanislav Nikolov</h2>
+              <p class="title">Lead Creative</p>
+              <p>His design is almost as handsome as him.</p>
+              <p>stasnikolov03@gmail.com</p>
+              <p><button class="button">Contact</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+              <img src="/static/images/people/marto.png" alt="Martin" style="width:100%">
+              <div class="container">
+                <h2>Martin Milchov</h2>
+                <p class="title">Lead Developer</p>
+                <p>He writes efficient code and corrects mistakes.</p>
+                <p>martin.g.milchov@gmail.com</p>
+                <p><button class="button">Contact</button></p>
+              </div>
+            </div>
+        </div>
+        
+        <div class="column">
+          <div class="card">
+            <img src="/static/images/people/kevinPFP.jpg" alt="Kevin" style="width:100%">
+            <div class="container">
+              <h2>Kevin Joosten</h2>
+              <p class="title">Software Developer</p>
+              <p>He is our software developer, he writes code and helps out the team.</p>
+              <p>kivin@gmail.com</p>
+              <p><button class="button">Contact</button></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+</body>
+</html>

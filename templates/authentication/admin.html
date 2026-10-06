@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/authentication/admin.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/download.png') }}">
+    <title>admin</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="dropdown">
+            <button class="dropbtn" >Account</button>
+            <div class="dropdown-content">  
+              <a href="{{ url_for('main.profile') }}">Profile</a>
+              <a href="{{ url_for('auth.logout') }}" >Log out</a>
+            </div>
+        </div> 
+            <a style="float:left" href="/">Home</a>
+    </div>
+
+    <div class="container1">
+        <img class="" src="/static/images/mariopizza.png">
+        <a href="/admin_orders">
+            <button class="button1">Orders</button>
+        </a>
+    </div>
+
+    <div class="container2">
+        <img class="" src="/static/images/luigipizza.png">
+        <a href="/smartoven">
+            <button class="button2">Smart oven</button>
+        </a>
+    </div>
+</body>
+</html>

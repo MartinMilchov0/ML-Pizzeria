@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/smartoven.css') }}">
+    <title>Document</title>
+</head>
+<br>
+<body>
+    </script>
+    <table>
+        <tr>
+            <th>Time</th>
+        </tr>
+        <tr>
+            {% for data in oven_data %}
+            <th>{{data[0]}}</th>
+            {% endfor %}
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <th>Oven</th>
+            {% for data in oven_data %}
+            <th>{{data[3]}}</th>
+            {% endfor %}
+        </tr>
+        <tr>
+            <th>Temperature</th>
+            {% for data in oven_data %}
+            <th>{{data[1]}} °c</th>
+            {% endfor %}
+        </tr>
+        <tr>
+            <th>Time left</th>
+            {% for data in oven_data %}
+            <th>{{data[2]}} seconds</th>
+            {% endfor %}
+        </tr>
+    </table>
+</body>
+</html>
